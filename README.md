@@ -27,6 +27,12 @@ In its nascent stage, a user can:
 
 In future updates, a user will also be able to:
 
+* paste urls into the add form that are compatible with more job sites
+
+* see a graph that shows their productivity vs. responses
+
+* set reminders for events. For instance, the user can be notified when to send a follow-up email. 
+
 ---
 ## Installing the App Locally
 
