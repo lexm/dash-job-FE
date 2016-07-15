@@ -1,0 +1,25 @@
+<div class="sortlist card joblist">
+  <h3>Today</h3>
+
+  <ul dnd-list="today">
+  <li ng-click="jobClick(job)" ng-repeat="job in today" dnd-draggable="job" dnd-moved="today.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = job" ng-class="{'selected': models.selected === job}">
+    {{job.title}}
+    {{job.company}}
+  </li>
+
+</ul>
+
+
+<div ng-show="backlogshow">
+
+<h3>Backlog</h3>
+<ul dnd-list="backlog">
+  <li ng-click="jobClick(job)" ng-repeat="job in backlog" dnd-draggable="job" dnd-moved="backlog.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = job" ng-class="{'selected': models.selected === job}">
+    {{job.title}}
+    {{job.company}}
+  </li>
+</ul>
+</div>
+
+
+</div>
