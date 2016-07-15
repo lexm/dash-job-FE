@@ -15,12 +15,24 @@ h1 {
   font-weight: 300;
 }
 
-h4 {
-  padding: .5em;
+.jobinfo h4 {
+  margin-bottom: 0;
+  padding-left: .3em;
 }
 
-p, h3, h4 {
-  color: #A9A9A9;
+a {
+  margin-left: .72em;
+  font-size: .8em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #02CEFF;
+}
+
+.one.columns input {
+  background-color: #1AAFD0;
+  margin-left: .3em;
 }
 
 .sortlist {
@@ -107,12 +119,22 @@ p, h3, h4 {
  */
 .sortlist ul[dnd-list] li {
     background-color: #fff;
-    border: 1px solid #FFFFFF;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    /*border-top-right-radius: 4px;
+    border-top-left-radius: 4px;*/
     display: block;
     padding: 10px 15px;
     margin-bottom: -1px;
+    color: gray;
+}
+
+.eventlist li {
+  list-style-type: none;
+}
+
+.eventlist p {
+  padding-left: .8em;
 }
 
 /**
@@ -151,7 +173,7 @@ p, h3, h4 {
 }
 
 #jobcard h4 {
-  font-size: 30px;
+  font-size: 3.6rem;
   /*min-height: 572px;*/
 }
 
