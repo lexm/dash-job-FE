@@ -2,9 +2,6 @@
 
 # DashJobs
 
-
-[![Build Status](https://travis-ci.org/DashJob/DashJob.svg?branch=master)](https://travis-ci.org/DashJob/DashJob)
-
 https://dashjobs.herokuapp.com/
 
 ## A MEAN stack application to help organize your job seach.
