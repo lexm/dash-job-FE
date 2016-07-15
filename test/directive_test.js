@@ -5,6 +5,8 @@ require('../app/js/client.js');
 const backLog = require('../app/templates/job/backlog.html');
 const pane = require('../app/templates/clickPanes/pane.html');
 const paneContainer = require('../app/templates/clickPanes/paneContainer.html');
+const eventForm = require('../app/templates/job/eventForm.html');
+const jobForm = require('../app/templates/job/jobform.html');
 
 describe('directive unit testing', () => {
   let $httpBackend;
@@ -73,8 +75,6 @@ describe('directive unit testing', () => {
     let count = directive.find('h4').text();
     let title = directive.find('div').text();
 
-    console.log(title);
-
     expect(count).toBe('5');
     expect(title).toContain('Today');
 
@@ -118,5 +118,45 @@ describe('directive unit testing', () => {
 
     expect(numberOfDivs.length).toBe(4);
     expect(backlogDiv).toContain('2');
+  });
+
+  it('should show form on click', () => {
+    $httpBackend.expectGET('./templates/job/jobform.html')
+    .respond(200, jobForm);
+    $scope.linkApiJob = {};
+
+    let element = angular.element('<div><job-form link-api-job="linkApiJob"></job-form></div>');
+    element.data('$ngControllerController', {});
+    let link = $compile(element);
+    let directive = link($scope);
+    $scope.$digest();
+    $httpBackend.flush();
+
+    let button = directive.find('input')[0];
+    let formDiv = angular.element(directive.find('div')[3]);
+    button.click();
+
+    expect((formDiv).hasClass('ng-hide')).toBe(false);
+
+  });
+
+  it('should have menu with options', () => {
+    $httpBackend.expectGET('./templates/job/eventForm.html')
+    .respond(200, eventForm);
+    $scope.jobCard = {job:{_id:'1', title:'testing'}};
+
+    let element = angular.element('<div><event-form job="jobCard.job"></event-form></div>');
+    element.data('$ngControllerController', {});
+    let link = $compile(element);
+    let directive = link($scope);
+    $scope.$digest();
+    $httpBackend.flush();
+
+    let button = angular.element(directive.find('select'));
+    let menu = angular.element(button.find('option')[2]);
+    let menuText = menu.text();
+
+
+    expect(menuText).toBe('Phone Screen');
   });
 });

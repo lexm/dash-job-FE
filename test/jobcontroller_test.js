@@ -81,4 +81,14 @@ describe('JobController Testing', () => {
     expect(jobctrl.jobs.length).toBe(0);
   });
 
+  it('should add an event with the same jobId as job _id', () => {
+    $httpBackend.expectPOST('http://localhost:3000/events')
+    .respond(200, {jobId: '1', note:'testing'});
+    jobctrl.jobCard.job = {_id:'1', title:'testing'};
+    jobctrl.addEvent();
+    $httpBackend.flush();
+
+    expect(jobctrl.jobCard.job.events[0].note).toBe('testing');
+  });
+
 });
