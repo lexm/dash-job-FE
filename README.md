@@ -19,7 +19,7 @@ In its nascent stage, a user can:
 
 * add a job to their dashboard. By pasting in a job link from Indeed, the job form will automatically be filled with the relevant information. If the user does not have a link, they can click the plus button which allow them to manually fill out the form.
 
-* move jobs from the Backlog list to the Today list utilizing the drag and drop functionality from Angular Materials.
+* move jobs from the Backlog list to the Today list utilizing drag and drop functionality.
 
 * click on a specific job, and see details and events (like phone interviews) pertaining to that job.
 
