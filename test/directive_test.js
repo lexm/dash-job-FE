@@ -114,7 +114,7 @@ describe('directive unit testing', () => {
     $httpBackend.flush();
 
     let numberOfDivs = angular.element(directive.find('pane'));
-    let backlogDiv = (angular.element(directive.find('pane')[1])).text();
+    let backlogDiv = (angular.element(directive.find('pane')[0])).text();
 
     expect(numberOfDivs.length).toBe(4);
     expect(backlogDiv).toContain('2');

@@ -13,6 +13,7 @@ module.exports = function (app) {
       link: function ($scope, elem, attr, controller) {
         $scope.$watch('backlog', function () {
           $scope.backlogCount = $scope.backlog.length;
+
         }, true);
 
         $scope.$watch('today', function () {
@@ -40,6 +41,7 @@ module.exports = function (app) {
           myEl.removeClass('paneslected');
           myEl = angular.element( document.querySelector( 'div.three.columns.pane.applied' ) );
           myEl.removeClass('paneslected');
+          controller.listtitle = 'Today'
 
         };
 
@@ -55,6 +57,7 @@ module.exports = function (app) {
           myEl.removeClass('paneslected');
           myEl = angular.element( document.querySelector( 'div.three.columns.pane.applied' ) );
           myEl.removeClass('paneslected');
+          controller.listtitle = 'Today'
         };
 
         $scope.inprocessclick = function (){
@@ -70,6 +73,7 @@ module.exports = function (app) {
           myEl.addClass('paneslected');
           myEl = angular.element( document.querySelector( 'div.three.columns.pane.applied' ) );
           myEl.removeClass('paneslected');
+          controller.listtitle = 'In Process'
         };
 
         $scope.appliedclick = function (){
@@ -85,6 +89,7 @@ module.exports = function (app) {
           myEl.removeClass('paneslected');
           myEl = angular.element( document.querySelector( 'div.three.columns.pane.applied' ) );
           myEl.addClass('paneslected');
+          controller.listtitle = 'Applied'
         };
       },
       controller: ['$scope', function($scope) {

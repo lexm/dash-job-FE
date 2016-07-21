@@ -10,7 +10,7 @@ module.exports = function (app) {
 
     service.getToday = function (jobs) {
       return jobs.filter(function (j) {
-        return (j.isToday == true && j.statusValue == 0 );
+        return (j.isToday != true && j.statusValue == 0 );
       });
     };
 

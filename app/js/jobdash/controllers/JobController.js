@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function (app) {
   let url = process.env.URI;
-  app.controller('JobController', function ($http, AuthService, sortJobs, globals) {
+  app.controller('JobController', function ($http, AuthService, sortJobs) {
     this.$http = $http;
     this.jobs = [];
     this.events = [];
@@ -16,8 +16,10 @@ module.exports = function (app) {
     this.linkApiJob = {};
     this.joblist = [];
 
-    this.getLink = function (link) {
 
+
+
+    this.getLink = function (link) {
       $http({
         method: 'POST',
         data: link,
@@ -64,8 +66,6 @@ module.exports = function (app) {
               this.backlog = sortJobs.attachEvents(this.backlog, this.events);
               this.inprocess = sortJobs.attachEvents(this.inprocess, this.events);
               this.applied = sortJobs.attachEvents(this.applied, this.events);
-
-
             }, (err) => {
               console.log(err);
             });

@@ -1,7 +1,7 @@
 module.exports = function (app) {
   app.directive('jobForm', function () {
     return {
-      templateUrl: './templates/job/jobform.html',
+      templateUrl: './templates/job/job_form.html',
       scope: {
         linkApiJob: '='
       },
