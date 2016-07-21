@@ -1,0 +1,34 @@
+<div ng-cloak="" ng-controller="JobController as jobctrl" ng-init="jobctrl.getActiveJobs()">
+
+
+  <div class="row">
+    <job-form link-api-job="jobctrl.linkApiJob"></job-form>
+  </div>
+
+
+  <div class="row">
+      <pane-container backlog="jobctrl.backlog" today="jobctrl.today" inprocess="jobctrl.inprocess" applied="jobctrl.applied"></pane-container>
+    </div>
+
+    <div ng-show="jobctrl.showbacklog" class="row">
+      <div class="twelve columns">
+        <backlog-view backlog="jobctrl.backlog" today="jobctrl.today"  backlogshow="jobctrl.backlogshow" listtitle="{{jobctrl.listtitle}}"></backlog-view>
+      </div>
+    </div>
+
+
+      <div ng-show="jobctrl.showjobevents" class="row">
+        <div class="six columns">
+          <backlog-view backlog="jobctrl.backlog" today="jobctrl.joblist"  listtitle="{{jobctrl.listtitle}}" backlogshow="jobctrl.backlogshow"></backlog-view>
+        </div>
+
+<div class="six columns">
+        <job-card job="jobctrl.jobCard.job">
+        </job-card>
+      </div>
+
+
+    </div>
+  </div>
+  <button class="signout" ng-controller="AuthController as authctrl" ng-click="authctrl.signOut()">SIGN OUT</button>
+  <script src="bundle.js"></script>

@@ -1,0 +1,23 @@
+<div id="jobcard" class="events card roundedcorners">
+    <div class="jobinfo">
+    <h3>{{job.company}}</h3>
+    <h4><a href="{{job.url}}">{{job.title}}</a></h4>
+  </div>
+  <div class="eventlist">
+
+        <p> Events </p>
+        <ul>
+
+        <li ng-repeat="event in job.events">
+          <event-icon eventtypeid="event.typeId"></event-icon>
+          <!-- <span class="glyphicon {{job.event.type}}" aria-hidden="true"></span> -->
+          {{event.note}}
+        </li>
+      </ul>
+    </div>
+      <div class="eventform">
+        <event-form job="job"></event-form>
+
+      </div>
+
+</div>
