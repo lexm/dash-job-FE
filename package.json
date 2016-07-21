@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "angular-drag-and-drop-lists": "^1.4.0",
     "angular-mocks": "^1.5.7",
     "eslint": "^2.11.1",
     "jasmine": "^2.4.1",
@@ -27,6 +26,7 @@
 
   },
   "dependencies": {
+    "angular-drag-and-drop-lists": "^1.4.0",
     "angular": "^1.5.7",
     "html-loader": "^0.4.3",
     "angular-route": "^1.5.7",
