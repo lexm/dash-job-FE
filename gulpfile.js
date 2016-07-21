@@ -85,7 +85,7 @@ gulp.task('bundle:production', () => {
       },
       plugins: [webpackplugin]
     }))
-    .pipe(gulp.dest(paths.build.main));
+    .pipe(gulp.dest(paths.production.main));
 });
 
 
