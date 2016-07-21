@@ -31,7 +31,7 @@ In future updates, a user will also be able to:
 
 * see a graph that shows their productivity vs. responses
 
-* set reminders for events. For instance, the user can be notified when to send a follow-up email. 
+* set reminders for events. For instance, the user can be notified when to send a follow-up email.
 
 ---
 ## Installing the App Locally
@@ -66,6 +66,7 @@ node server.js
 Leave both these windows open.
 
 You can open the app through the browser by going to [http://localhost:3003](http://localhost:3003/)
+
 ___
 ## Dependencies
 "angular": "^1.5.7",
