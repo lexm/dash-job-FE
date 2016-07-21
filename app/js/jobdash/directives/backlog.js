@@ -20,7 +20,8 @@ module.exports = function (app) {
       scope: {
         backlog: '=',
         today: '=',
-        backlogshow: '='
+        backlogshow: '=',
+        listtitle: '@'
 
       },
       require: '^^ngController',

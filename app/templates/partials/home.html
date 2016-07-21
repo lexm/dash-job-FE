@@ -12,40 +12,21 @@
 
     <div ng-show="jobctrl.showbacklog" class="row">
       <div class="twelve columns">
-        <backlog-view backlog="jobctrl.backlog" today="jobctrl.today"  backlogshow="jobctrl.backlogshow"></backlog-view>
+        <backlog-view backlog="jobctrl.backlog" today="jobctrl.today"  backlogshow="jobctrl.backlogshow" listtitle="{{jobctrl.listtitle}}"></backlog-view>
       </div>
     </div>
 
 
       <div ng-show="jobctrl.showjobevents" class="row">
         <div class="six columns">
-          <backlog-view backlog="jobctrl.backlog" today="jobctrl.joblist" backlogshow="jobctrl.backlogshow"></backlog-view>
+          <backlog-view backlog="jobctrl.backlog" today="jobctrl.joblist"  listtitle="{{jobctrl.listtitle}}" backlogshow="jobctrl.backlogshow"></backlog-view>
         </div>
 
-      <div id="jobcard" class="six columns events card">
-        <div class="jobinfo">
-          <h4>{{jobctrl.jobCard.job.company}}</h4>
-          <h3><a href="{{jobctrl.jobCard.job.url}}">{{jobctrl.jobCard.job.title}}</a></h3>
-        </div>
-        <div class="eventlist">
-
-
-              <p> Events </p>
-              <ul>
-
-
-              <li ng-repeat="event in jobctrl.jobCard.job.events">
-
-                {{event.note}}
-              </li>
-            </ul>
-          </div>
-            <div class="eventform">
-              <event-form job="jobctrl.jobCard.job"></event-form>
-
-            </div>
-
+<div class="six columns">
+        <job-card job="jobctrl.jobCard.job">
+        </job-card>
       </div>
+
 
     </div>
   </div>
