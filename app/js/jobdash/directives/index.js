@@ -5,5 +5,5 @@ module.exports = function(app) {
   require('./paneContainer')(app);
   require('./eventForm')(app);
   require('./jobCard')(app);
-  require('./eventIcon')(app);
+  require('./eventicon')(app);
 };
